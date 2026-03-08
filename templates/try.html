@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try Styling AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .form-section {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 420px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .form-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .form-box p {
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #ff7a18;
+            outline: none;
+        }
+
+        .generate-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(120deg, #ff7a18, #ffb347);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .generate-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">✏️ Styling AI</div>
+    <ul>
+        <li onclick="window.location.href='/'">Home</li>
+    </ul>
+</nav>
+
+<!-- Form Section -->
+<section class="form-section">
+
+    <div class="form-box">
+
+        <h2>Enter Your Style Query</h2>
+        <p>Example: Suggest outfit for wedding</p>
+
+        <form action="/generate" method="POST">
+            <textarea name="user_input" rows="5" placeholder="Type your fashion query..."></textarea>
+
+            <button class="generate-btn" type="submit">
+                Generate
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+</html>

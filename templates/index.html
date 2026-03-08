@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styling AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">✏️ Styling AI</div>
+    <ul>
+        <li onclick="showHome()">Home</li>
+        <li onclick="showFeatures()">Features</li>
+        <li onclick="window.location.href='/try'">Try It</li>
+        <li onclick="showAbout()">About</li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Your Personal AI<br>Fashion Stylist</h1>
+        <p>Enter your styling query and get AI suggestions</p>
+        <button onclick="window.location.href='/try'">Get Started</button>
+    </div>
+</section>
+
+<section class="features hidden" id="features">
+    <h2 align="center">Why Choose Styling AI?</h2>
+
+    <div class="cards">
+        <div class="card">📷 AI Style Analysis</div>
+        <div class="card">🎨 Color Matching</div>
+        <div class="card">🛍️ Outfit Suggestions</div>
+        <div class="card">⭐ Styling Tips</div>
+    </div>
+</section>
+
+<section class="about hidden" id="about">
+    <h2 align="center">About Styling AI</h2>
+    <p align="center">
+        Styling AI gives fashion suggestions using Generative AI.
+    </p>
+</section>
+
+<script>
+function hideAll() {
+    document.getElementById("features").classList.add("hidden");
+    document.getElementById("about").classList.add("hidden");
+}
+
+function showFeatures() {
+    hideAll();
+    document.getElementById("features").classList.remove("hidden");
+}
+
+function showAbout() {
+    hideAll();
+    document.getElementById("about").classList.remove("hidden");
+}
+
+function showHome() {
+    hideAll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html> 

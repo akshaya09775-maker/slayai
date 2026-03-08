@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styling AI Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container centered */
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Result Box */
+        .result-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            width: 500px;
+            max-height: 80vh; /* prevent box from exceeding viewport */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            overflow-y: auto; /* allow scrolling for long content */
+        }
+
+        .result-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .result-box p {
+            color: #555;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 25px;
+        }
+
+        /* Button Styling */
+        .try-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(120deg, #ff7a18, #ffb347);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .try-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="result-box">
+        <h2>Styling Suggestions</h2>
+        <p>{{ result }}</p>
+        <a href="/try" class="try-btn">Try Again</a>
+    </div>
+</div>
+
+</body>
+</html> 
